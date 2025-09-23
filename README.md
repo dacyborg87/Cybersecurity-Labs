@@ -23,9 +23,7 @@ I use this repo to document my learning process, share configurations, and showc
 - Integrated Windows (Sysmon) and Linux endpoints.  
 - Built detection rules mapped to MITRE ATT&CK (brute force, privilege escalation, persistence).  
 - **Skills:** SIEM, Log Analysis, Incident Response.  
-
-📸 *Example Alert Screenshot:*  
-![Wazuh Alerts](images/wazuh-alerts.png)  
+ 
 
 ---
 
