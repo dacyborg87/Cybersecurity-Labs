@@ -1,0 +1,32 @@
+<group name="local,windows,sysmon,attack">
+  <!-- Suspicious PowerShell flags -->
+  <rule id="100100" level="8">
+    <if_group>sysmon_event1</if_group>
+    <field name="win.eventdata.image">.*\\powershell(.exe)?</field>
+    <regex>.*(-nop|-noni|-w\s*hidden|-enc|-encodedcommand|-executionpolicy\s*bypass).*</regex>
+    <description>Suspicious PowerShell flags detected (T1059.001)</description>
+    <mitre>
+      <id>T1059.001</id>
+      <tactic>execution</tactic>
+      <technique>PowerShell</technique>
+    </mitre>
+    <options>no_full_log</options>
+    <frequency>3</frequency>
+    <timeframe>60</timeframe>
+  </rule>
+
+  <!-- Multiple failed logons (brute force) -->
+  <rule id="100110" level="7">
+    <if_group>windows,sysmon|security_event</if_group>
+    <field name="win.system.eventID">4625</field>
+    <description>Multiple failed Windows logons (potential brute force) (T1110)</description>
+    <group>authentication_failed,attack</group>
+    <mitre>
+      <id>T1110</id>
+      <tactic>credential-access</tactic>
+      <technique>Brute Force</technique>
+    </mitre>
+    <frequency>5</frequency>
+    <timeframe>120</timeframe>
+  </rule>
+</group>
