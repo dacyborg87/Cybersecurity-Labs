@@ -36,10 +36,7 @@ I use this repo to document my learning process, share configurations, and showc
   - Port scanning  
   - Suspicious PowerShell activity  
 - Tuned alerts to reduce false positives.  
-- **Skills:** IDS/IPS, Detection Engineering, Network Security.  
-
-📸 *Suricata Traffic Monitoring:*  
-![Suricata Stats](images/wazuh-stats.png)  
+- **Skills:** IDS/IPS, Detection Engineering, Network Security.   
 
 ---
 
